@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		457D50A126C352920060BA13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457D50A026C352920060BA13 /* AppDelegate.swift */; };
 		457D50A326C352920060BA13 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457D50A226C352920060BA13 /* SceneDelegate.swift */; };
-		457D50A526C352920060BA13 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457D50A426C352920060BA13 /* ViewController.swift */; };
+		457D50A526C352920060BA13 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457D50A426C352920060BA13 /* GalleryViewController.swift */; };
 		457D50A826C352920060BA13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 457D50A626C352920060BA13 /* Main.storyboard */; };
 		457D50AA26C352930060BA13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 457D50A926C352930060BA13 /* Assets.xcassets */; };
 		457D50AD26C352930060BA13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 457D50AB26C352930060BA13 /* LaunchScreen.storyboard */; };
@@ -18,13 +18,14 @@
 		457D50B926C369560060BA13 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457D50B826C369560060BA13 /* JSONParser.swift */; };
 		457D50BB26C36BEA0060BA13 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457D50BA26C36BEA0060BA13 /* APIKey.swift */; };
 		457D50BD26C36C9E0060BA13 /* UnsplashAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457D50BC26C36C9E0060BA13 /* UnsplashAPI.swift */; };
+		457D50C026C3787F0060BA13 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457D50BF26C3787E0060BA13 /* PhotoCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		457D509D26C352920060BA13 /* PhotoGalleryDesign.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoGalleryDesign.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		457D50A026C352920060BA13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		457D50A226C352920060BA13 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		457D50A426C352920060BA13 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		457D50A426C352920060BA13 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		457D50A726C352920060BA13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		457D50A926C352930060BA13 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		457D50AC26C352930060BA13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -34,6 +35,7 @@
 		457D50B826C369560060BA13 /* JSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		457D50BA26C36BEA0060BA13 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		457D50BC26C36C9E0060BA13 /* UnsplashAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashAPI.swift; sourceTree = "<group>"; };
+		457D50BF26C3787E0060BA13 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +70,8 @@
 			children = (
 				457D50A026C352920060BA13 /* AppDelegate.swift */,
 				457D50A226C352920060BA13 /* SceneDelegate.swift */,
-				457D50A426C352920060BA13 /* ViewController.swift */,
+				457D50A426C352920060BA13 /* GalleryViewController.swift */,
+				457D50BF26C3787E0060BA13 /* PhotoCollectionViewCell.swift */,
 				457D50B426C362FD0060BA13 /* Photo.swift */,
 				457D50BE26C36CA90060BA13 /* Networking */,
 				457D50A626C352920060BA13 /* Main.storyboard */,
@@ -83,9 +86,9 @@
 			isa = PBXGroup;
 			children = (
 				457D50B626C364560060BA13 /* APIClient.swift */,
+				457D50B826C369560060BA13 /* JSONParser.swift */,
 				457D50BC26C36C9E0060BA13 /* UnsplashAPI.swift */,
 				457D50BA26C36BEA0060BA13 /* APIKey.swift */,
-				457D50B826C369560060BA13 /* JSONParser.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -162,9 +165,10 @@
 			files = (
 				457D50B526C362FD0060BA13 /* Photo.swift in Sources */,
 				457D50BB26C36BEA0060BA13 /* APIKey.swift in Sources */,
-				457D50A526C352920060BA13 /* ViewController.swift in Sources */,
+				457D50A526C352920060BA13 /* GalleryViewController.swift in Sources */,
 				457D50B926C369560060BA13 /* JSONParser.swift in Sources */,
 				457D50BD26C36C9E0060BA13 /* UnsplashAPI.swift in Sources */,
+				457D50C026C3787F0060BA13 /* PhotoCollectionViewCell.swift in Sources */,
 				457D50A126C352920060BA13 /* AppDelegate.swift in Sources */,
 				457D50B726C364560060BA13 /* APIClient.swift in Sources */,
 				457D50A326C352920060BA13 /* SceneDelegate.swift in Sources */,
