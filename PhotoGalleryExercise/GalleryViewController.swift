@@ -9,7 +9,6 @@ import UIKit
 
 class GalleryViewController: UIViewController {
     let screenSize = UIScreen.main.bounds
-    
     @IBOutlet var collectionView: UICollectionView!
     private var photos = [Photo]()
 
@@ -48,6 +47,7 @@ class GalleryViewController: UIViewController {
         super.viewDidLoad()
         configureCollectionView()
         loadPhotos()
+        self.navigationItem.title = "Gallery"
     }
 }
 
@@ -57,22 +57,22 @@ extension GalleryViewController: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.identifier, for: indexPath) as! PhotoCollectionViewCell
         let photo = photos[indexPath.row]
-        cell.photo = photo
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.identifier, for: indexPath) as! PhotoCollectionViewCell
+            cell.photo = photo
+        
         return cell
     }
-    
-    
-    
 }
 
 extension GalleryViewController: UICollectionViewDelegate {
 
 }
 
+//let screenSize = UIScreen.main.bounds
 extension GalleryViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: screenSize.width, height: 280)
+        return CGSize(width: screenSize.size.width, height: 280)
     }
 }

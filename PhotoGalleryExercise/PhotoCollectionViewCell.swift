@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class PhotoCollectionViewCell: UICollectionViewCell {
     @IBOutlet var imageView: UIImageView!
@@ -15,7 +16,13 @@ class PhotoCollectionViewCell: UICollectionViewCell {
     
     var photo: Photo! {
         didSet {
-            self.descriptionLabel.text = photo.description ?? "..."
+            self.descriptionLabel.text = photo.description ?? "no description"
+            
+            guard let url = URL(string: photo.urls.regular) else {
+                return
+            }
+            
+            self.imageView.kf.setImage(with: url)
         }
     }
 }
