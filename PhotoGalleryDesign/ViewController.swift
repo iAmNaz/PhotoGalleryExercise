@@ -12,7 +12,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let client = APIClient()
-        client.fetch(resource: "photos", completionHandler: <#T##(Data?, URLResponse?, Error?) -> Void#>)
+        client.fetch(resource: "photos") { data, _, _ in
+            print(data as Any)
+        }
     }
 
 
