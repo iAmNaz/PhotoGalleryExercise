@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		457BB93426C3A2A60034B3AD /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 457BB93326C3A2A60034B3AD /* Kingfisher */; };
 		457D50A126C352920060BA13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457D50A026C352920060BA13 /* AppDelegate.swift */; };
 		457D50A326C352920060BA13 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457D50A226C352920060BA13 /* SceneDelegate.swift */; };
 		457D50A526C352920060BA13 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457D50A426C352920060BA13 /* GalleryViewController.swift */; };
@@ -22,7 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		457D509D26C352920060BA13 /* PhotoGalleryDesign.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoGalleryDesign.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		457D509D26C352920060BA13 /* PhotoGalleryExercise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoGalleryExercise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		457D50A026C352920060BA13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		457D50A226C352920060BA13 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		457D50A426C352920060BA13 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
@@ -43,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				457BB93426C3A2A60034B3AD /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,7 +54,7 @@
 		457D509426C352920060BA13 = {
 			isa = PBXGroup;
 			children = (
-				457D509F26C352920060BA13 /* PhotoGalleryDesign */,
+				457D509F26C352920060BA13 /* PhotoGalleryExercise */,
 				457D509E26C352920060BA13 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -60,12 +62,12 @@
 		457D509E26C352920060BA13 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				457D509D26C352920060BA13 /* PhotoGalleryDesign.app */,
+				457D509D26C352920060BA13 /* PhotoGalleryExercise.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		457D509F26C352920060BA13 /* PhotoGalleryDesign */ = {
+		457D509F26C352920060BA13 /* PhotoGalleryExercise */ = {
 			isa = PBXGroup;
 			children = (
 				457D50A026C352920060BA13 /* AppDelegate.swift */,
@@ -79,7 +81,7 @@
 				457D50AB26C352930060BA13 /* LaunchScreen.storyboard */,
 				457D50AE26C352930060BA13 /* Info.plist */,
 			);
-			path = PhotoGalleryDesign;
+			path = PhotoGalleryExercise;
 			sourceTree = "<group>";
 		};
 		457D50BE26C36CA90060BA13 /* Networking */ = {
@@ -96,9 +98,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		457D509C26C352920060BA13 /* PhotoGalleryDesign */ = {
+		457D509C26C352920060BA13 /* PhotoGalleryExercise */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 457D50B126C352930060BA13 /* Build configuration list for PBXNativeTarget "PhotoGalleryDesign" */;
+			buildConfigurationList = 457D50B126C352930060BA13 /* Build configuration list for PBXNativeTarget "PhotoGalleryExercise" */;
 			buildPhases = (
 				457D509926C352920060BA13 /* Sources */,
 				457D509A26C352920060BA13 /* Frameworks */,
@@ -108,9 +110,12 @@
 			);
 			dependencies = (
 			);
-			name = PhotoGalleryDesign;
+			name = PhotoGalleryExercise;
+			packageProductDependencies = (
+				457BB93326C3A2A60034B3AD /* Kingfisher */,
+			);
 			productName = PhotoGalleryDesign;
-			productReference = 457D509D26C352920060BA13 /* PhotoGalleryDesign.app */;
+			productReference = 457D509D26C352920060BA13 /* PhotoGalleryExercise.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -127,7 +132,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 457D509826C352920060BA13 /* Build configuration list for PBXProject "PhotoGalleryDesign" */;
+			buildConfigurationList = 457D509826C352920060BA13 /* Build configuration list for PBXProject "PhotoGalleryExercise" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -136,11 +141,14 @@
 				Base,
 			);
 			mainGroup = 457D509426C352920060BA13;
+			packageReferences = (
+				457BB93226C3A2A60034B3AD /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 457D509E26C352920060BA13 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				457D509C26C352920060BA13 /* PhotoGalleryDesign */,
+				457D509C26C352920060BA13 /* PhotoGalleryExercise */,
 			);
 		};
 /* End PBXProject section */
@@ -320,7 +328,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 488G2FHT7X;
-				INFOPLIST_FILE = PhotoGalleryDesign/Info.plist;
+				INFOPLIST_FILE = PhotoGalleryExercise/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -339,7 +347,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 488G2FHT7X;
-				INFOPLIST_FILE = PhotoGalleryDesign/Info.plist;
+				INFOPLIST_FILE = PhotoGalleryExercise/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -354,7 +362,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		457D509826C352920060BA13 /* Build configuration list for PBXProject "PhotoGalleryDesign" */ = {
+		457D509826C352920060BA13 /* Build configuration list for PBXProject "PhotoGalleryExercise" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				457D50AF26C352930060BA13 /* Debug */,
@@ -363,7 +371,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		457D50B126C352930060BA13 /* Build configuration list for PBXNativeTarget "PhotoGalleryDesign" */ = {
+		457D50B126C352930060BA13 /* Build configuration list for PBXNativeTarget "PhotoGalleryExercise" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				457D50B226C352930060BA13 /* Debug */,
@@ -373,6 +381,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		457BB93226C3A2A60034B3AD /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.3.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		457BB93326C3A2A60034B3AD /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 457BB93226C3A2A60034B3AD /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 457D509526C352920060BA13 /* Project object */;
 }
