@@ -12,6 +12,9 @@ enum ParserError: Error {
 }
 
 struct JSONParser {
+    // Input Data
+    // Expected output -> either and error or valid model
+    
     func parse<Model: Codable>(data: Data, completionHandler: @escaping ([Model]?, Error?) -> Void) {
         do {
             let jsonDecoder = JSONDecoder()
