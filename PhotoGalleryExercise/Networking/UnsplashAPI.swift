@@ -19,8 +19,8 @@ enum PhotoAPIError: Error {
 class UnsplashAPI {
     let client = APIClient()
     
-    func getPhotos(resultBlock: @escaping ([Photo]?, PhotoAPIError?) -> Void) {
-        client.fetch(resource: UnsplashAPIEndopints.photos) { data, _, errorMessage in
+    func getPhotos(orderBy: String, resultBlock: @escaping ([Photo]?, PhotoAPIError?) -> Void) {
+        client.fetch(resource: UnsplashAPIEndopints.photos,  orderBy: orderBy) { data, _, errorMessage in
             
             if let error = errorMessage {
                 resultBlock(nil, PhotoAPIError.apiFailed(error))

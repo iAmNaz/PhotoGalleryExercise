@@ -17,8 +17,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading photos..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CuH-RO-CRd">
+                                <rect key="frame" x="87" y="430" width="240" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jin-fN-TcE">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="10" id="ygj-Gt-TPU">
                                     <size key="itemSize" width="414" height="280"/>
@@ -79,9 +85,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="jin-fN-TcE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="TLo-O4-ZKB"/>
+                            <constraint firstItem="CuH-RO-CRd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UrZ-tl-tDf"/>
                             <constraint firstItem="jin-fN-TcE" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="ado-FJ-Ylg"/>
                             <constraint firstItem="jin-fN-TcE" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="bQo-kd-pfO"/>
                             <constraint firstItem="jin-fN-TcE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rqR-ez-hds"/>
+                            <constraint firstItem="CuH-RO-CRd" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="shu-ug-F3m"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Whe-F1-Wal">
@@ -90,10 +98,13 @@
                             <rect key="frame" x="106" y="5.5" width="202" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
-                                <segment title="First"/>
-                                <segment title="Second"/>
-                                <segment title="Third"/>
+                                <segment title="Latest"/>
+                                <segment title="Oldest"/>
+                                <segment title="Popular"/>
                             </segments>
+                            <connections>
+                                <action selector="filterChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="jsA-Kz-hhh"/>
+                            </connections>
                         </segmentedControl>
                     </navigationItem>
                     <connections>
@@ -187,6 +198,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U5e-mG-noy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1191.304347826087" y="829.6875"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="AqB-wH-4r8">
+            <objects>
+                <viewController id="5TN-5y-5Yf" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="juj-vL-1VH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="mnc-LK-D7c"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i9P-X2-UaY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1352" y="830"/>
         </scene>
         <!--Preferences-->
         <scene sceneID="ueR-Zj-FLX">

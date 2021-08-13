@@ -12,47 +12,7 @@ class GalleryViewController: UIViewController {
     let screenSize = UIScreen.main.bounds
     @IBOutlet var collectionView: UICollectionView!
     private var photos = [Photo]()
-    let context = appDelegate.persistentContainer.viewContext
-    
-    fileprivate func loadPhotos() {
-        let client = UnsplashAPI()
-        client.getPhotos { (photos: [Photo]?, error: PhotoAPIError?) in
-            DispatchQueue.main.async {
-                if let error = error {
-                    // show alert
-                    print(error)
-                    
-                    switch error {
-                    case .apiFailed(let message):
-                        print(message)
-                    case .parsingFailed(let message):
-                        print(message)
-                    }
-                } else {
-                    if let photos = photos {
-                        self.photos = photos
-                        
-                        for photo in self.photos {
-                            let photoEntity = NSEntityDescription.entity(forEntityName: "PhotoModel", in: self.context)
-                            let model = PhotoModel(entity: photoEntity!, insertInto: self.context)
-                            model.url = photo.urls.regular
-                            appDelegate.saveContext()
-                        }
-                        
-                    } else {
-                        self.photos = [Photo]()
-                    }
-                }
-                self.collectionView.reloadData()
-            }
-        }
-    }
-    
-    fileprivate func configureCollectionView() {
-        collectionView.dataSource = self
-        collectionView.delegate = self
-    }
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCollectionView()
@@ -75,6 +35,62 @@ class GalleryViewController: UIViewController {
         
         let photo = photos[selectedIndexPath.row]
         fullScreenVC.imageUrl = photo.urls.regular
+    }
+    
+    let filterKeywords = ["latest", "oldest", "popular"]
+    var currentFilterIndex = 0
+    @IBAction func filterChanged(_ sender: Any) {
+        let segmentedControl = sender as! UISegmentedControl
+        currentFilterIndex = segmentedControl.selectedSegmentIndex
+        loadPhotos()
+    }
+    
+    fileprivate func configureCollectionView() {
+        collectionView.dataSource = self
+        collectionView.delegate = self
+    }
+    
+    fileprivate func loadPhotos() {
+        collectionView.isHidden = true
+        truncateTables()
+        fetchRemoteData()
+    }
+    
+    fileprivate func truncateTables() {
+        DB.truncate(entityName: "PhotoModel")
+        DB.truncate(entityName: "UserModel")
+    }
+    
+    fileprivate func fetchRemoteData() {
+        let client = UnsplashAPI()
+        client.getPhotos(orderBy: filterKeywords[currentFilterIndex]) { (photos: [Photo]?, error: PhotoAPIError?) in
+            DispatchQueue.main.async {
+                if let error = error {
+                    // show alert
+                    print(error)
+                    
+                    switch error {
+                    case .apiFailed(let message):
+                        print(message)
+                    case .parsingFailed(let message):
+                        print(message)
+                    }
+                } else {
+                    if let photos = photos {
+                        self.photos = photos
+                        
+                        for photo in self.photos {
+                            DB.insert(photo)
+                        }
+                        
+                    } else {
+                        self.photos = [Photo]()
+                    }
+                }
+                self.collectionView.isHidden = false
+                self.collectionView.reloadData()
+            }
+        }
     }
 }
 
